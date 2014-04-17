@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{865F4B55-DB15-4F41-95EC-9AA1A2A4FA76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{980B7EA8-07E9-4AFC-8E61-14A343A9E409}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{865F4B55-DB15-4F41-95EC-9AA1A2A4FA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865F4B55-DB15-4F41-95EC-9AA1A2A4FA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865F4B55-DB15-4F41-95EC-9AA1A2A4FA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865F4B55-DB15-4F41-95EC-9AA1A2A4FA76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

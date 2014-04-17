@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Chat Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SignalR Self Host @ViewBag.Title</title>
+    @Scripts.Render("~/bundles/jquery")
+   <script src="Scripts/jquery-2.1.0.min.js"></script>
+   <script src="Scripts/jquery.signalR-2.0.2.min.js"></script>
+   <script src="~/signalr/hubs"></script>
+</head>
+<body>
+  <h1>SignalR Self Hosting</h1>
+  <div>
+   <div>
+    <textarea id="messagesText" rows="20" style="width:100%"></textarea>
+   </div>
+   <div>
+    <textarea id="newMessage" rows="3"></textarea>
+    <button id="sendMessage">Send</button>
+   </div>
+  </div>
+  <script type="text/javascript">
+
+      var hub = $.connection.chatHub;
+      var msgText = $("#messagesText");
+      var newMessage = $("#newMessage");
+
+
+      hub.client.addNewMessageToPage = function (message) {
+          msgText.text(msgText.text() + "\r\n" + message);
+      };
+
+
+      $.connection.hub.start().done(function () {
+          $(document).on('click', '#sendMessage', function(){
+              hub.server.send(newMessage.text());
+          });
+      });
+
+      //var connection = $.hubConnection();
+      //var hubProxy = connection.createHubProxy('chatHub');
+      //hubProxy.on('addNewMessageToPage', function (message) {
+      //    msgText.text(msgText.text() + "\r\n" + message);
+      //});
+      //connection.start().done(function () {
+      //    // Wire up Send button to call NewContosoChatMessage on the server.
+      //    $('#sendMessage').click(function () {
+      //        hubProxy.invoke('send', newMessage.text());
+
+      //    });
+      //});
+
+
+  </script>
+</body>
+</html>
